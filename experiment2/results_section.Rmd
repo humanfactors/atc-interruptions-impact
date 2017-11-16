@@ -1,0 +1,49 @@
+---
+title: "Experiment 2 Results"
+output:
+  html_notebook: default
+  word_document:
+    reference_docx: ./reports/APA_6th_template.docx
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+library('ProjectTemplate')
+library(knitr)
+load.project()
+source("src/exp2-analysis.R")
+```
+
+```{r textmeans, include=FALSE, echo=FALSE}
+library(apa)
+source("src/exp2-textmeans.R")
+```
+
+```{r routinetable, include=FALSE, echo=FALSE}
+library(pander)
+source("src/exp2-routinetablegenerator.R")
+```
+
+## Results and Discussion
+Data from one participant was removed from all analyses who failed to perform any of the deferred handoﬀ tasks correctly. Consistent with Experiment 1, all statistical analyses comprise two planned orthogonal contrasts: (1) ATC-interruption and blank interruption (combined) vs no-interruption, and (2) ATC-interruption vs blank interruption.
+
+### Deferred Conflict Task
+Participants acknowledged 99.99% of encoding messages indicating the impending conflict. The mean resumption time and resumption failure proportions for each condition are presented in Figure 5.
+
+Resumption time was significantly slower in the blank condition `r meantextms(exp2.resumptionTime$Blank)` than in the no-interruption condition `r meantextms(exp2.resumptionTime$None)`, `r texttest(exp2.resumptionTime.none.t, exp2.resumptionTime.none.bf)` 1.84e+11.
+There was no significant difference between the ATC `r meantextms(exp2.resumptionTime$ATC)` and blank interruption conditions, `r texttest(exp2.resumptionTime.int.t, exp2.resumptionTime.int.bf)`.
+The proportion of resumption failures did not significantly differ between the blank condition `r meanpctext(exp2.resumptionMisses$Blank)` and the no-interruption condition `r meanpctext(exp2.resumptionMisses$None)`, `r texttest(exp2.resumptionMisses.none.t, exp2.resumptionMisses.none.bf)`, but did significantly differ between the ATC `r meanpctext(exp2.resumptionMisses$ATC)` and blank conditions `r texttest(exp2.resumptionMisses.int.t, exp2.resumptionMisses.int.bf)`.
+
+
+### Deferred Handoff Task
+
+The proportion of habit-capture errors on the deferred hand-oﬀ task did not significantly diﬀer between the blank condition `r meanpctext(exp2.deferredHandoffMiss$Blank)` and the no-interruption condition `r meanpctext(exp2.deferredHandoffMiss$None)`, `r texttest(exp2.deferredHandoffMiss.none.t, exp2.deferredHandoffMiss.none.bf)`, or between the ATC `r meanpctext(exp2.deferredHandoffMiss$ATC)` and blank interruption conditions, `r texttest(exp2.deferredHandoffMiss.int.t, exp2.deferredHandoffMiss.int.bf)`.
+
+Deferred handoﬀ RTs also did not significantly between the blank condition `r meantextms(exp2.deferredHandoffTime$Blank)` and the no interruption condition `r meantextms(exp2.deferredHandoffTime$None)`, `r texttest(exp2.deferredHandoffTime.none.t, exp2.deferredHandoffTime.none.bf)`, or between the ATC `r meantextms(exp2.deferredHandoffTime$ATC)` and blank interruption conditions, `r texttest(exp2.deferredHandoffTime.int.t, exp2.deferredHandoffTime.int.bf)`.
+
+### Workload
+
+The two workload questions were highly correlated, r (57) = .96, p < .001 and thus collapsed into a single workload variable, workload. Self-reported workload did not significantly diﬀer between the no-interruption `r meantext(exp2.workload$None)` and blank condition `r meantext(exp2.workload$Blank)`, `r texttest(exp2.workload.none.t, exp2.workload.none.bf)` or between the ATC `r meantext(exp2.workload$ATC)` and blank interruption conditions, `r texttest(exp2.workload.int.t, exp2.workload.int.bf)`. The evidence here indicates that our workload measure exhhibited signs of a moderate response and that  interruptions did not increase subjective workload.
+
+## Meta
+
+*t*(117) = 1.92, *p* = .057, *d* = 0.18, BF01 = 1.66

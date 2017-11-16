@@ -1,0 +1,55 @@
+---
+title: "Experiment 1 Results"
+output:
+  word_document:
+      reference_docx: ./experiment1/reports/APA_6th_template.docx
+  html_notebook: default
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+library('ProjectTemplate')
+library(knitr)
+load.project()
+source("./experiment1/src/exp1-analysis.R")
+```
+
+```{r textmeans, include=FALSE, echo=FALSE}
+library(apa)
+source("./experiment1/src/exp1-textmeans.R")
+```
+
+```{r routinetable, include=FALSE, echo=FALSE}
+library(pander)
+source("./experiment1/src/exp1-routinetasktable.R")
+```
+## Deferred Conflict Task
+
+Resumption time was significantly slower in the blank condition `r meantextms(exp1.resumptionTime$Blank)` than in the no-interruption condition `r meantextms(exp1.resumptionTime$None)`, `r texttest(exp1.resumptionTime.none.t, exp1.resumptionTime.none.bf)`.
+There was no significant difference between the _n_-back `r meantextms(exp1.resumptionTime$Nback)` and blank interruption conditions, `r texttest(exp1.resumptionTime.int.t, exp1.resumptionTime.int.bf)`.
+The proportion of resumption failures was significantly higher in the blank condition `r meanpctext(exp1.resumptionMisses$Blank)` than in the no-interruption condition `r meanpctext(exp1.resumptionMisses$None)`, `r texttest(exp1.resumptionMisses.none.t, exp1.resumptionMisses.none.bf)`.
+However, the proportion of resumption failures  did not significantly differ between the _n_-back `r meanpctext(exp1.resumptionMisses$Nback)` and blank conditions `r texttest(exp1.resumptionMisses.int.t, exp1.resumptionMisses.int.bf)`.
+
+
+## Deferred Handoff Task
+
+The proportion of habit-capture errors on the deferred hand-oﬀ task did not significantly diﬀer between the blank condition `r meanpctext(exp1.deferredHandoffMiss$Blank)` and the no-interruption condition `r meanpctext(exp1.deferredHandoffMiss$None)`, `r texttest(exp1.deferredHandoffMiss.none.t, exp1.deferredHandoffMiss.none.bf)`, or between the _n_-back `r meanpctext(exp1.deferredHandoffMiss$Nback)` and blank interruption conditions, `r texttest(exp1.deferredHandoffMiss.int.t, exp1.deferredHandoffMiss.int.bf)`.
+
+Deferred handoﬀ RTs also did not significantly between the blank condition `r meantextms(exp1.deferredHandoffTime$Blank)` and the no interruption condition `r meantextms(exp1.deferredHandoffTime$None)`, `r texttest(exp1.deferredHandoffTime.none.t, exp1.deferredHandoffTime.none.bf)`, or between the _n_-back `r meantextms(exp1.deferredHandoffTime$Nback)` and blank interruption conditions, `r texttest(exp1.deferredHandoffTime.int.t, exp1.deferredHandoffTime.int.bf)`.
+
+## Workload
+
+The two workload questions were highly correlated, r (57) = .96, p < .001 and thus collapsed into a single workload variable, workload. Self-reported workload did not significantly diﬀer between the no-interruption `r meantext(exp1.workload$None)` and blank condition `r meantext(exp1.workload$Blank)`, `r texttest(exp1.workload.none.t, exp1.workload.none.bf)` or between the _n_-back `r meantext(exp1.workload$Nback)` and blank interruption conditions, `r texttest(exp1.workload.int.t, exp1.workload.int.bf)`. The evidence here indicates that our workload measure exhhibited signs of a moderate response and that  interruptions did not increase subjective workload.
+
+## Routine Task
+
+```{r}
+panderOptions('table.alignment.default', function(df)
+    ifelse(sapply(df, is.numeric), 'right', 'left'))
+panderOptions('table.split.table', Inf)
+panderOptions('big.mark', ",")
+panderOptions('keep.trailing.zeros', TRUE)
+pander(exp1.routinetable)
+```
+
+
+
