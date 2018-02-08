@@ -15,28 +15,28 @@ source("./experiment1/src/exp1-confidence-intervals.R")
 exp1.resumptionTime.melt <- melt(exp1.resumptionTime[c(2:4)])
 exp1.resumptionTime.melt <- dcast(exp1.resumptionTime.melt, variable ~ ., fun.aggregate = mean)
 exp1.resumptionTime.melt$. <- exp1.resumptionTime.melt$.
-exp1.resumptionTime.melt <- data.frame(exp1.resumptionTime.melt$variable, c(exp1.wsci.restime.atc, exp1.wsci.restime.blank, exp1.wsci.restime.none), c(exp1.resumptionTime.melt$.))
+exp1.resumptionTime.melt <- data.frame(exp1.resumptionTime.melt$variable, c(exp1.wsci.restime.Nback, exp1.wsci.restime.blank, exp1.wsci.restime.none), c(exp1.resumptionTime.melt$.))
 colnames(exp1.resumptionTime.melt) <- c("Condition", "CI", "mean")
 exp1.resumptionTime.melt$Condition <- factor(exp1.resumptionTime.melt$Condition, levels = c("None", "Blank", "Nback"))
 
 exp1.resumptionMisses.melt <- melt(exp1.resumptionMisses[c(2:4)])
 exp1.resumptionMisses.melt <- dcast(exp1.resumptionMisses.melt, variable ~ ., fun.aggregate = mean)
 exp1.resumptionMisses.melt$. <- exp1.resumptionMisses.melt$.
-exp1.resumptionMisses.melt <- data.frame(exp1.resumptionMisses.melt$variable, c(exp1.wsci.resfail.atc, exp1.wsci.resfail.blank, exp1.wsci.resfail.none), c(exp1.resumptionMisses.melt$.))
+exp1.resumptionMisses.melt <- data.frame(exp1.resumptionMisses.melt$variable, c(exp1.wsci.resfail.Nback, exp1.wsci.resfail.blank, exp1.wsci.resfail.none), c(exp1.resumptionMisses.melt$.))
 colnames(exp1.resumptionMisses.melt) <- c("Condition", "CI", "mean")
 exp1.resumptionMisses.melt$Condition <- factor(exp1.resumptionMisses.melt$Condition, levels = c("None", "Blank", "Nback"))
 
 exp1.deferredHandoffTime.melt <- melt(exp1.deferredHandoffTime[c(2:4)])
 exp1.deferredHandoffTime.melt <- dcast(exp1.deferredHandoffTime.melt, variable ~ ., fun.aggregate = mean, na.rm = TRUE)
 exp1.deferredHandoffTime.melt$. <- exp1.deferredHandoffTime.melt$.
-exp1.deferredHandoffTime.melt <- data.frame(exp1.deferredHandoffTime.melt$variable, c(exp1.wsci.defhotime.atc, exp1.wsci.defhotime.blank, exp1.wsci.defhotime.none), c(exp1.deferredHandoffTime.melt$.))
+exp1.deferredHandoffTime.melt <- data.frame(exp1.deferredHandoffTime.melt$variable, c(exp1.wsci.defhotime.Nback, exp1.wsci.defhotime.blank, exp1.wsci.defhotime.none), c(exp1.deferredHandoffTime.melt$.))
 colnames(exp1.deferredHandoffTime.melt) <- c("Condition", "CI", "mean")
 exp1.deferredHandoffTime.melt$Condition <- factor(exp1.deferredHandoffTime.melt$Condition, levels = c("None", "Blank", "Nback"))
 
 exp1.deferredHandoffMiss.melt <- melt(exp1.deferredHandoffMiss[c(2:4)])
 exp1.deferredHandoffMiss.melt <- dcast(exp1.deferredHandoffMiss.melt, variable ~ ., fun.aggregate = mean)
 exp1.deferredHandoffMiss.melt$. <- exp1.deferredHandoffMiss.melt$.
-exp1.deferredHandoffMiss.melt <- data.frame(exp1.deferredHandoffMiss.melt$variable, c(exp1.wsci.defhomiss.atc, exp1.wsci.defhomiss.blank, exp1.wsci.defhomiss.none), c(exp1.deferredHandoffMiss.melt$.))
+exp1.deferredHandoffMiss.melt <- data.frame(exp1.deferredHandoffMiss.melt$variable, c(exp1.wsci.defhomiss.Nback, exp1.wsci.defhomiss.blank, exp1.wsci.defhomiss.none), c(exp1.deferredHandoffMiss.melt$.))
 colnames(exp1.deferredHandoffMiss.melt) <- c("Condition", "CI", "mean")
 exp1.deferredHandoffMiss.melt$Condition <- factor(exp1.deferredHandoffMiss.melt$Condition, levels = c("None", "Blank", "Nback"))
 
