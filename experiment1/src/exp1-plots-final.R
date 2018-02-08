@@ -57,7 +57,6 @@ theme_luke <- function(base_size = 10, base_family = "") {
       panel.border = element_blank(),
       panel.background = element_blank(),
       text = element_text(size = 12, family = base_family, face = "plain", color = "black", hjust = 0.5, vjust = 0.5, angle = 0, lineheight = 0.9,margin = margin(), debug = FALSE),
-      axis.line = element_line(color = 'black'),
       legend.position = "none",
       axis.ticks = element_line(colour = "black"),
       axis.title.x = element_blank(),
@@ -107,3 +106,7 @@ plot.reserror
 # ggsave('graphs/exp1.hrt.png', plot = plot.hrt, width=3.5, height=3.5, scale = 3, dpi = 300, units = "px")
 # ggsave('graphs/exp1.deferredHandoffMiss.png', plot = plot.hrtMiss, width=3.5, height=3.5, scale = 3, dpi = 300, units = "cm")
 
+ggsave('figures/exp1.reslag.png', plot = plot.reslag, width=3.5, height=3.5, scale = 3, units = "cm")
+ggsave('figures/exp1.reserror.png', plot = plot.reserror, width=3.5, height=3.5, scale = 3, dpi = 300, units = "cm")
+ggsave('figures/exp1.hrt.png', plot = plot.hrt, width=3.5, height=3.5, scale = 3, dpi = 300, units = "px")
+ggsave('figures/exp1.deferredHandoffMiss.png', plot = plot.hrtMiss, width=3.5, height=3.5, scale = 3, dpi = 300, units = "cm")
