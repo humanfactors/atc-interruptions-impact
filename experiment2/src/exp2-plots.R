@@ -6,8 +6,9 @@
 # key vars: variable.title.t, variable.title.bf, variable.title.d
 # ---
 
-library(ggplot2)
 library(scales)
+library(ggplot2)
+library(lsr)
 
 source("./experiment2/src/exp2-analysis.R")
 source("./experiment2/src/exp2-confidence-intervals.R")
@@ -69,7 +70,7 @@ theme_set(theme_luke())
 plot.hrtMiss <- ggplot(exp2.deferredHandoffMiss.melt, aes(factor(Condition), mean)) +
   geom_bar(size = 0.5, fill = grays, colour = "black", stat = "identity", width = .8) +
   geom_errorbar(aes(ymax = mean + CI, ymin = mean - CI, width = 0.2)) +
-  scale_y_continuous(name = "Error Proportion", breaks = seq(0.0, .4, by = .05), limits = c(0.0, .45), labels = percent) +
+  scale_y_continuous(name = "Error Proportion", breaks = seq(0.0, .45, by = .05), limits = c(0.0, .45), labels = percent) +
   geom_text(aes(y = .02, x = Condition, angle = 0, label = percent(mean), size = 4.28)) +
   scale_x_discrete(labels = mylabels)
 plot.hrtMiss

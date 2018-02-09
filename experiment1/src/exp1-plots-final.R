@@ -5,6 +5,9 @@
 # description: "Conduct hypothesis testing for R."
 # key vars: variable.title.t, variable.title.bf, variable.title.d
 # ---
+library(scales)
+library(ggplot2)
+library(lsr)
 
 source("./experiment1/src/exp1-analysis.R")
 source("./experiment1/src/exp1-confidence-intervals.R")
@@ -80,7 +83,7 @@ plot.hrt <- ggplot(exp1.deferredHandoffTime.melt, aes(factor(Condition), mean)) 
   geom_bar(size = 0.5, fill = grays, colour = "black", stat = "identity", width = .8) +
   geom_errorbar(aes(ymax = mean + CI, ymin = mean - CI, width = 0.2)) +
   ylab("Response Time (ms)") +
-  scale_y_continuous(breaks = seq(0, 3200, by = 500), limits = c(0, 3200)) +
+  scale_y_continuous(breaks = seq(0, 3000, by = 500), limits = c(0, 3200)) +
   geom_text(aes(y = 300, x = Condition, angle = 0, label = round(mean, 0), size = 4.3)) +
   scale_x_discrete(labels = mylabels)
 plot.hrt
@@ -89,7 +92,7 @@ plot.reslag <- ggplot(exp1.resumptionTime.melt, aes(factor(Condition), mean)) +
   geom_bar(size = 0.5, fill = grays, colour = "black", stat = "identity", width = .8) +
   geom_errorbar(aes(ymax = mean + CI, ymin = mean - CI, width = 0.2)) +
   xlab("Condition") + ylab("Response Time") +
-  scale_y_continuous(breaks = seq(0, 5500, by = 1000), limits = c(0, 5500)) +
+  scale_y_continuous(breaks = seq(0, 5300, by = 1000), limits = c(0, 5300)) +
   geom_text(aes(y = 300, x = as.numeric(Condition), angle = 0, label = round(mean, 0), size = 10)) +
   scale_x_discrete(labels = mylabels)
 plot.reslag
@@ -105,5 +108,5 @@ plot.reserror
 
 ggsave('figures/exp1.reslag.png', plot = plot.reslag, width=3.5, height=3.5, scale = 3, units = "cm")
 ggsave('figures/exp1.reserror.png', plot = plot.reserror, width=3.5, height=3.5, scale = 3, dpi = 300, units = "cm")
-ggsave('figures/exp1.hrt.png', plot = plot.hrt, width=3.5, height=3.5, scale = 3, dpi = 300, units = "px")
+ggsave('figures/exp1.hrt.png', plot = plot.hrt, width=3.5, height=3.5, scale = 3, dpi = 300, units = "cm")
 ggsave('figures/exp1.deferredHandoffMiss.png', plot = plot.hrtMiss, width=3.5, height=3.5, scale = 3, dpi = 300, units = "cm")
