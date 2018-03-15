@@ -1,6 +1,6 @@
 * Repository Information
 
-[[http://creativecommons.org/licenses/by-sa/4.0/][file:https://img.shields.io/badge/License-BY--SA--4.0-blue.svg?longCache=true&style=flat-square]]
+[[http://creativecommons.org/licenses/by-sa/4.0/][file:https://img.shields.io/badge/License-CC--BY--SA--4.0-blue.svg?longCache=true&style=flat-square]]
 [[https://img.shields.io/badge/Maintained%3F-yes-green.svg?longCache=true&style=flat-square]]
 [[https://badges.frapsoft.com/os/v2/open-source.png?v=103]]
 [[https://zenodo.org/badge/DOI/COMINGSOON.svg]]
