@@ -84,3 +84,4 @@ vignettes/*.pdf
 *.html
 experiment1/.Rhistory
 experiment1/.Rhistory
+.vscode/settings.json
