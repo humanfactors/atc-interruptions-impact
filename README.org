@@ -3,12 +3,12 @@
 [[http://creativecommons.org/licenses/by-sa/4.0/][file:https://img.shields.io/badge/License-CC--BY--SA--4.0-blue.svg?longCache=true&style=flat-square]]
 [[https://img.shields.io/badge/Maintained%3F-yes-green.svg?longCache=true&style=flat-square]]
 [[https://badges.frapsoft.com/os/v2/open-source.png?v=103]]
-[[https://zenodo.org/badge/DOI/10.1037/xap0000171.svg]]
+[[https://zenodo.org/badge/DOI/10.1037/xap0000171.svg][https://doi.org/10.1037/xap0000171]]
 
 
 This repository is the companion site to my first paper from my doctoral research: Wilson, M. D., Farrell, S., Visser, T., & Loft, S. (in press). /Remembering to Execute Deferred Tasks in Simulated Air Traffic Control: The Impact of Interruptions/ (in press). Journal of Experimental Psychology: Applied.  
 
-Please note the paper contained in the repository is © 2018, American Psychological Association. This paper is not the copy of record and may not exactly replicate the final, authoritative version of the article. Please do not copy or cite without authors permission. The final article will be available, upon publication, via its DOI: 10.1037/xap0000171 
+Please note the paper contained in the repository is © 2018, American Psychological Association. This paper is not the copy of record and may not exactly replicate the final, authoritative version of the article. Please do not copy or cite without authors permission. The final article will be available, upon publication, via its DOI: [[10.1037/xap0000171][https://doi.org/10.1037/xap0000171]]
 
 ** Package Information
 
